@@ -13,6 +13,7 @@ import { CinemasComponent } from './pages/cinemas/cinemas.component';
 import { DetailsCinemaComponent } from './pages/details-cinema/details-cinema.component';
 import { SubscriptionFormComponent } from './subscription-form/subscription-form.component';
 import { MovieCardComponent } from './layouts/movie-card/movie-card.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MovieCardComponent } from './layouts/movie-card/movie-card.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

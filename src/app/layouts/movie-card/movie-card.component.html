@@ -1,12 +1,14 @@
 <div class="container mt-4">
-    <div class="card">
-      <img src="https://images.pexels.com/photos/11879973/pexels-photo-11879973.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Placeholder Image">
-      <div class="card-body">
-        <h5 class="card-title">Título de la Película</h5>
-        <p class="card-text">Descripción de la película. Puedes agregar más detalles sobre la trama, actores, etc.</p>
+    <div class="row">
+      <div class="card" *ngFor="let movie of movies">
+        <img src="http://localhost:8000/{{ movie.image }}" class="card-img-top" alt="Placeholder Image">
+        <div class="card-body">
+          <h5 class="card-title"><a routerLink="/movie">{{ movie.title }}</a></h5>
+          <p class="card-text">{{ movie.description }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{ movie.year }}</li>
+        </ul>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Fecha de lanzamiento: 01/01/2023</li>
-      </ul>
     </div>
 </div>
