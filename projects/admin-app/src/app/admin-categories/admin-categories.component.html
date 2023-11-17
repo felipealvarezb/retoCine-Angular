@@ -1,0 +1,45 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Add Categories</h5>
+                </div>
+                <div class="card-body">
+                    <form class="input-group mb-3">
+                        <input type="text" class="form-control" name="category" placeholder="Enter the category name here" >
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary">Add Category</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-10">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Category name</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let category of categories">
+                    <th scope="row"> {{ category._id }}</th>
+                    <td>{{ category.categoryName }}</td>
+                    <td>
+                        <div class="btn-group">
+                            <a routerLink="" class="btn btn-primary">Edit</a>
+                            <a routerLink="" class="btn btn-danger">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
