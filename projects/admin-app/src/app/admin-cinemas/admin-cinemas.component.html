@@ -1,0 +1,51 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Add Directors</h5>
+                </div>
+                <div class="card-body">
+                    <form class="input-group mb-3" [formGroup]="cinemaForm">
+                        <input id="cinemaName" type="text" class="form-control" placeholder="Enter the category name here" formControlName="cinemaName">
+                        <input id="city" type="text" class="form-control" placeholder="Enter the city here" formControlName="city">
+                        <input id="address" type="text" class="form-control" placeholder="Enter the address here" formControlName="address">
+                    </form>
+                    <div class="input-group-append justify-content-center">
+                        <button class="btn btn-secondary" (click)="onSubmitCreate()">Add Director</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-10">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Cinema name</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let cinema of cinemas">
+                    <th scope="row"> {{ cinema._id }}</th>
+                    <td>{{ cinema.cinemaName }}</td>
+                    <td>{{ cinema.city }}</td>
+                    <td>{{ cinema.address }}</td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn btn-primary" (click)="onSubmitUpdate(cinema._id)">Edit</button>
+                            <button class="btn btn-danger" (click)="onSubmitDelete(cinema._id)">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

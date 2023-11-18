@@ -6,21 +6,28 @@ import { AppComponent } from './app.component';
 import { AdminHeaderComponent } from './layouts/admin-header/admin-header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminCategoriesComponent } from './admin-categories/admin-categories.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminActorsComponent } from './admin-actors/admin-actors.component';
+import { AdminDirectorsComponent } from './admin-directors/admin-directors.component';
+import { AdminCinemasComponent } from './admin-cinemas/admin-cinemas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminHeaderComponent,
     DashboardComponent,
-    AdminCategoriesComponent
+    AdminCategoriesComponent,
+    AdminActorsComponent,
+    AdminDirectorsComponent,
+    AdminCinemasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

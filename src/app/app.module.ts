@@ -14,6 +14,7 @@ import { DetailsCinemaComponent } from './pages/details-cinema/details-cinema.co
 import { SubscriptionFormComponent } from './subscription-form/subscription-form.component';
 import { MovieCardComponent } from './layouts/movie-card/movie-card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

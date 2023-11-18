@@ -1,30 +1,29 @@
-<div id="container">
+<div id="container" *ngIf="movie">
 
-    <!-- Parte izquierda como card -->
     <div id="left-column" class="card">
-        <img id="movie-image" src="ruta-de-la-imagen.jpg" alt="Imagen de la película">
+        <img id="movie-image" src="http://localhost:8000/{{ movie.image }}" alt="Imagen de la película">
         <div class="card-body">
-            <h2 class="card-title">Título de la Película</h2>
-            <p class="card-text">Descripción de la película.</p>
-            <p class="card-text"><strong>Reparto:</strong> Nombre del actor 1, Nombre del actor 2, ...</p>
-            <p class="card-text"><strong>Categoría:</strong> Acción, Aventura, Ciencia ficción, ...</p>
+            <h2 class="card-title">{{ movie.title }}</h2>
+            <p class="card-text">{{ movie.description }}</p>
+            <p class="card-text"><strong>Reparto:</strong> {{ movie.actors }}</p>
+            <p class="card-text"><strong>Categoría:</strong> {{ movie.categories }}</p>
         </div>
     </div>
 
-    <!-- Parte derecha -->
+
     <div id="right-column">
         <div class="video-container">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="info-rectangle">
-            <h3>Información adicional 1</h3>
-            <p>Detalles sobre la película.</p>
+            <h3>Teatros</h3>
+            <p>{{ movie.theater }}</p>
         </div>
-        <div class="info-rectangle">
-            <h3>Información adicional 2</h3>
-            <p>Más detalles sobre la película.</p>
-        </div>
-        <!-- Agrega más bloques .info-rectangle según sea necesario -->
+       
     </div>
 
+</div>
+
+<div *ngIf="!movie">
+    <p>Cargando detalles de la película...</p>
 </div>

@@ -33,12 +33,12 @@ export class CrudCategoriesService {
 
   updateCategory(id:string, data:Category): Observable<any>{
     return this.httpClient
-      .put(`this.REST_API/${id}`, data, {headers: this.httpHeaders});
+      .put(`${this.REST_API}/${id}`, data, {headers: this.httpHeaders});
 
   }
 
   deleteCategory(id:string): Observable<any>{
     return this.httpClient
-    .delete(`this.REST_API/${id}`, {headers: this.httpHeaders});
+    .delete(`${this.REST_API}/${id}`, {headers: this.httpHeaders});
   }
 }

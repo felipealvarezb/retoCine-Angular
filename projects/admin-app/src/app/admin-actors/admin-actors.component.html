@@ -3,14 +3,14 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mb-0">Add Categories</h5>
+                    <h5 class="mb-0">Add Actors</h5>
                 </div>
                 <div class="card-body">
                     <form class="input-group mb-3">
-                        <input id="categoryName" type="text" class="form-control" id="categoryName" placeholder="Enter the category name here" [formControl]="categoryName" >
+                        <input id="actorName" type="text" class="form-control" id="actorName" placeholder="Enter the actor name here" [formControl]="actorName" >
                     </form>
                     <div class="input-group-append justify-content-center">
-                        <button class="btn btn-secondary" (click)="onSubmitCreate()">Add Category</button>
+                        <button class="btn btn-secondary" (click)="onSubmitCreate()">Add Actors</button>
                     </div>
                 </div>
             </div>
@@ -23,18 +23,18 @@
                 <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Category name</th>
+                    <th scope="col">Actor name</th>
                     <th scope="col">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let category of categories">
-                    <th scope="row"> {{ category._id }}</th>
-                    <td>{{ category.categoryName }}</td>
+                <tr *ngFor="let actor of actors">
+                    <th scope="row"> {{ actor._id }}</th>
+                    <td>{{ actor.actorName }}</td>
                     <td>
                         <div class="btn-group">
-                            <button class="btn btn-primary" (click)="onSubmitUpdate(category._id)">Edit</button>
-                            <button class="btn btn-danger" (click)="onSubmitDelete(category._id)">Delete</button>
+                            <button class="btn btn-primary" (click)="onSubmitUpdate(actor._id)">Edit</button>
+                            <button class="btn btn-danger" (click)="onSubmitDelete(actor._id)">Delete</button>
                         </div>
                     </td>
                 </tr>
