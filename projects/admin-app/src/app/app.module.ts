@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminActorsComponent } from './admin-actors/admin-actors.component';
 import { AdminDirectorsComponent } from './admin-directors/admin-directors.component';
 import { AdminCinemasComponent } from './admin-cinemas/admin-cinemas.component';
+import { RegisterComponent } from './authentication/register/register.component';
+import { LoginComponent } from './authentication/login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { AdminCinemasComponent } from './admin-cinemas/admin-cinemas.component';
     AdminCategoriesComponent,
     AdminActorsComponent,
     AdminDirectorsComponent,
-    AdminCinemasComponent
+    AdminCinemasComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

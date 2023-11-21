@@ -5,8 +5,9 @@
         <div class="card-body">
             <h2 class="card-title">{{ movie.title }}</h2>
             <p class="card-text">{{ movie.description }}</p>
-            <p class="card-text"><strong>Reparto:</strong> {{ movie.actors }}</p>
-            <p class="card-text"><strong>Categoría:</strong> {{ movie.categories }}</p>
+            <p class="card-text"><strong>Actors:</strong> {{ actorNames.join(', ') }}</p>
+            <p class="card-text"><strong>Directors:</strong> {{ directorNames.join(', ') }}</p>
+            <p class="card-text"><strong>Categories:</strong> {{ categoryNames.join(', ') }}</p>
         </div>
     </div>
 

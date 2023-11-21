@@ -16,21 +16,65 @@ export class AdminCinemasComponent implements OnInit{
     address: new FormControl("")
   });
 
-  cinemas: Cinema[] = []
+  cinemas: Cinema[] = [];
 
   constructor( private crudCinemasService:CrudCinemasService ){}
 
   ngOnInit(): void {
       this.crudCinemasService.getCinemas().subscribe((res:Cinema[]) => {
         this.cinemas = res;
-      })
+      });
   }
 
   onSubmitCreate(){
+    const newDirector: Cinema = {
+      cinemaName: this.cinemaForm.value.cinemaName ?? '',
+      city: this.cinemaForm.value.city ?? '',
+      address: this.cinemaForm.value.address ?? ''
+    };
+
+    this.crudCinemasService.createCinema(newDirector).subscribe(
+      (res) => {
+        console.log("Cinema added succesfully");
+
+        this.crudCinemasService.getCinemas().subscribe((res:Cinema[]) => {
+          this.cinemas = res;
+        });
+
+        this.cinemaForm.setValue({
+          cinemaName: "",
+          city: "",
+          address: ""
+        });
+
+      },
+      (error) => {
+        console.error("Error adding cinema", error);
+      }
+    )
   }
 
   onSubmitUpdate(cinemaId:string | undefined){}
 
-  onSubmitDelete(cinemaId:string | undefined){}
+  onSubmitDelete(cinemaId:string | undefined){
+    const confirmDelete = confirm("Are you sure you want to delete this director?");
+  
+    if (!confirmDelete) {
+      return;
+    }
+
+    this.crudCinemasService.deleteCinema(cinemaId ?? '').subscribe(
+      (res) => {
+        console.log("Cinema deleted succesfully");
+
+        this.crudCinemasService.getCinemas().subscribe((res:Cinema[]) => {
+          this.cinemas = res;
+        });
+      },
+      (error) => {
+        console.error("Error deleting cinema", error);
+      }
+    )
+  }
 
 }

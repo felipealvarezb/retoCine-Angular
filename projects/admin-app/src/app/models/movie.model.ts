@@ -1,3 +1,7 @@
+import { Actor } from "./actor.model";
+import { Category } from "./category.model";
+import { Director } from "./director.model";
+
 export interface Movie{
     _id:string;
     title: string;
@@ -8,7 +12,7 @@ export interface Movie{
     movieDate:string;
     price: number;
     theater: string;
-    categories: string;
-    actors: string;
-    directors: string;
+    categories: Category[];
+    actors: Actor[];
+    directors: Director[];
 }
